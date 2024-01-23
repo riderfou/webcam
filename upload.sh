@@ -7,7 +7,7 @@ mv /home/jerome/webcam/powdercam.jpg /home/jerome/webcam/$(date +%Y%m%d-%H%M).jp
 echo tmp local archive image created
 
 echo archiving previous powdercam image on ftp
-ncftpput -u u357357863.jeromefolliet -p CmoiWebcam002! ftp.station-ski-saint-hilaire.fr /archive /home/jerome/webcam/*.jpg
+ncftpput -u username -p pwd  ftp.domain.tld /archive /home/jerome/webcam/*.jpg
 echo previous powdercam image archived
 
 echo erasing local file
