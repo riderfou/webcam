@@ -1,12 +1,15 @@
-#upload.sh
-#!/bin/bash
+echo uploading powdercam image on ftp
+ncftpput -S .tmp -u username -p pwd  ftp.domain.tld / /home/jerome/webcam/powdercam.jpg
+echo powdercam image uploaded
 
-echo ftp upload in progress
-ncftpput -S .tmp -u planneig -p GyfnVT5b ftp.plan-neige.org /www/peufdaddy/ /home/pi/powdercam/powdercam.jpg
-echo powdercam image upload finished
-mv /home/pi/powdercam/powdercam.jpg /home/pi/powdercam/$(date +%Y%m%d-%H%M).jpg
-echo archive image created
-ncftpput -u planneig -p GyfnVT5b ftp.plan-neige.org /www/peufdaddy/archive /home/pi/powdercam/*.jpg
-echo archive image upload finished
+echo creating tmp local archive image
+mv /home/jerome/webcam/powdercam.jpg /home/jerome/webcam/$(date +%Y%m%d-%H%M).jpg
+echo tmp local archive image created
+
+echo archiving previous powdercam image on ftp
+ncftpput -u u357357863.jeromefolliet -p CmoiWebcam002! ftp.station-ski-saint-hilaire.fr /archive /home/jerome/webcam/*.jpg
+echo previous powdercam image archived
+
+echo erasing local file
 rm *.jpg
-echo file erased
+echo local file erased
