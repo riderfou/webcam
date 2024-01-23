@@ -1,7 +1,7 @@
 #chamrousse.sh
 #!/bin/bash
 
-OPTIONS='-q 100 -t 500 -w 1280 -h 768 -x'
+OPTIONS='-q 100 -t 500 -w 1280 -h 768 -sh 100 -ex auto -awb auto'
 DATE=$(date +"%d/%m/%Y")
 HOUR=$(date +"%R")
 
